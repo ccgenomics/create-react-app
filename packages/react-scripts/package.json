@@ -1,14 +1,14 @@
 {
   "name": "@ccg.ai/react-scripts",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "Netguru configuration and scripts for Create React App",
-  "repository": "netguru/create-react-app",
+  "repository": "ccgenomics/create-react-app",
   "license": "MIT",
   "engines": {
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/netguru/create-react-app/issues"
+    "url": "https://github.com/ccgenomics/create-react-app/issues"
   },
   "files": [
     "bin",
@@ -36,7 +36,7 @@
     "css-loader": "0.28.7",
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
-    "eslint": "~4.15.0",
+    "eslint": "~4.18.2",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-import-resolver-webpack": "^0.8.1",
     "eslint-loader": "1.9.0",
