@@ -1,6 +1,6 @@
 {
   "name": "@ccg.ai/react-scripts",
-  "version": "3.2",
+  "version": "3.2.1",
   "description": "Netguru configuration and scripts for Create React App",
   "repository": "ccgenomics/create-react-app",
   "license": "MIT",
@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "autoprefixer": "7.1.6",
-    "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
     "babel-loader": "7.1.2",
@@ -75,10 +74,11 @@
     "whatwg-fetch": "2.0.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "normalize.css": "^7.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-hot-loader": "^4.3.2",
-    "normalize.css": "^7.0.0"
+    "react-hot-loader": "^4.3.2"
   },
   "optionalDependencies": {
     "fsevents": "^1.1.3"
