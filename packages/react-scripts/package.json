@@ -1,6 +1,6 @@
 {
   "name": "@ccg.ai/react-scripts",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Netguru configuration and scripts for Create React App",
   "repository": "ccgenomics/create-react-app",
   "license": "MIT",
