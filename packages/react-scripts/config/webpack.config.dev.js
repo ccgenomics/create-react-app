@@ -49,15 +49,16 @@ module.exports = {
     // Note: instead of the default WebpackDevServer client, we use a custom one
     // to bring better experience for Create React App users. You can replace
     // the line below with these two lines if you prefer the stock client:
-    // require.resolve('webpack-dev-server/client') + '?/',
-    // require.resolve('webpack/hot/dev-server'),
-    require.resolve('react-dev-utils/webpackHotDevClient'),
+    require.resolve('webpack-dev-server/client') + '?/',
+    require.resolve('webpack/hot/dev-server'),
+    // require.resolve('react-dev-utils/webpackHotDevClient'),
     // Finally, this is your app's code:
     paths.appIndexJs,
     // We include the app code last so that if there is a runtime error during
     // initialization, it doesn't blow up the WebpackDevServer client, and
     // changing JS code would still trigger a refresh.
   ],
+  mode: process.env.NODE_ENV,
   output: {
     // Add /* filename */ comments to generated require()s in the output.
     pathinfo: true,
@@ -191,8 +192,6 @@ module.exports = {
                   modules: process.env.CSS_MODULES
                     ? process.env.CSS_MODULES == 'true'
                     : true,
-                  camelCase: true,
-                  localIdentName: '[path][name]__[local]--[hash:base64:5]',
                 },
               },
               {
@@ -201,6 +200,7 @@ module.exports = {
                   // Necessary for external CSS imports to work
                   // https://github.com/facebookincubator/create-react-app/issues/2677
                   ident: 'postcss',
+                  sourceMap: true,
                   plugins: () => [
                     require('postcss-flexbugs-fixes'),
                     autoprefixer({
@@ -257,12 +257,14 @@ module.exports = {
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    // In development, this will be an empty string.
-    new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
+    }),
+    // In development, this will be an empty string.
+    new InterpolateHtmlPlugin(HtmlWebpackPlugin, {
+      PUBLIC_URL: env.raw,
     }),
     // Add module names to factory functions so they appear in browser profiler.
     new webpack.NamedModulesPlugin(),
