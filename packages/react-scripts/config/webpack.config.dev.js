@@ -183,6 +183,7 @@ module.exports = {
           // in development "style" loader enables hot editing of CSS.
           {
             test: /\.(css|scss)$/,
+            exclude: paths.appNodeModules,
             use: [
               require.resolve('style-loader'),
               {
@@ -199,7 +200,6 @@ module.exports = {
                 options: {
                   // Necessary for external CSS imports to work
                   // https://github.com/facebookincubator/create-react-app/issues/2677
-                  ident: 'postcss',
                   sourceMap: true,
                   plugins: () => [
                     require('postcss-flexbugs-fixes'),
@@ -218,6 +218,14 @@ module.exports = {
               {
                 loader: require.resolve('sass-loader'),
               },
+            ],
+          },
+          {
+            // Only testing node-modules css
+            test: /\.(css|scss)$/,
+            use: [
+              require.resolve('style-loader'),
+              require.resolve('css-loader'),
             ],
           },
           // This loader will load markdown files as raw string.
