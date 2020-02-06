@@ -1,6 +1,6 @@
 {
   "name": "@ccg.ai/react-scripts",
-  "version": "4.2",
+  "version": "4.2.0",
   "description": "CCG configuration and scripts for Create React App",
   "repository": "ccgenomics/create-react-app",
   "license": "MIT",
